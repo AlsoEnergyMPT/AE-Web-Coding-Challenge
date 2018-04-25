@@ -1,0 +1,60 @@
+/* Default style attributes of each initial rabbit */
+.rabbit
+{
+	width: 100px;
+	height: 75px;
+	background-color: #4CD618;
+	border-width: 1px;
+	border-style: solid;
+	position: absolute;
+}
+
+/* Class to apply to the selected rabbit which draws a white outline around them */
+.selectedRabbit
+{
+	border-width: 5px;
+	border-style: solid;
+	border-color: #FFFFFF;
+}
+
+/* Class to apply to the selected rabbit's parents which colors them blue */
+.parentRabbit
+{
+	background-color: #3FD3CC;
+}
+
+/* Class to apply to the selected rabbit's children which colors them yellow */
+.childRabbit
+{
+	background-color: #FFFF51;
+}
+
+/* CSS attributes to define the <div> ID for the Generate button */
+#generateBtn
+{
+	background-color: #D1CEC9;
+	width: 200px;
+	border-style: double;
+	border-width: 5px;
+	border-color: #000000;
+	
+	text-align: center;
+	font-size: 24px;
+	padding: 8px; /* Provide some additional spacing around the button's text */
+	
+	/* Force the button to be rendered in the cottom center of the content area */
+	position: absolute; 
+	bottom: 0px;
+	left: 50%;
+	margin-left: -100px; /* Apply a margin of 1/2 the button's width to horizontally center it in the area */
+	z-index: 1; /* Draw the button on a layer above the rabbits */
+	
+}
+
+/* CSS attributes to define the <div> ID for the content area that rabbits will be generated within */
+#content
+{
+	background-color: #DC8A03;
+	overflow: hidden; /* Prevent the page from scrolling to accomodate new rabbits */
+	position: relative;
+}

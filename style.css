@@ -1,3 +1,83 @@
-body {
-    background: #3F3939;
+/* Remove any default margins / padding as determined by the renderer so we can fill the entire screen */
+*
+{
+	margin: 0px;
+	padding: 0px;
+}
+
+/* Background color for the page. Should end up being covered by other <div>s */
+body 
+{
+	background: #FFFFFF;	
+}
+
+/* Style attributes for the header <div> along the top of the page */
+header
+{
+	/* Set header size and import the AE logo into the area as a background image so text can be rendered on top of it */
+	background: #D72C0E url("images/also_logo.png") center no-repeat;
+	background-size: contain; /* Prevent the image from expanding the header region based on its own dimensions */
+	height: 100px;
+	
+	/* Left justify the required text and make it larger */
+	text-align: left;
+	font-size: 24px;
+	color: #FFFFFF;
+}
+
+/* Style attributes for the main <div> of the page */
+main
+{
+	background: #56C90B;
+	
+	/* Set position to relative so menu and content <div>s do not overlap with the header.
+	 * This doesn't directly affect <div> main's positioning, but sets it as the parent that the
+	 * menu and content <div>s use for their positioning coordinates. */
+	position: relative;	
+}
+
+/* Style attributes for the left/top menu <div> ID within main */
+#menu
+{
+	background: #56C90B;
+	
+	font-size: 24px;
+	text-align: center;
+	
+	/* Define the menu <div> along the left side of the main area using a width and margin */ 
+	width: 250px;
+	position: absolute; /* Use aboslute positioning to establish coordinates using main <div> for its (0,0) point */
+	top: 0px; /* Push the menu <div> to the top of the main <div> region */
+}
+
+/* Style attributes for the right/bottom content <div> ID within main */
+#content
+{
+	background: #FADDAA;
+	margin-left: 250px; /* Push the content region to the right by the width of the menu region */
+	height: 700px;
+}
+
+/* Style attributes for the footer <div> at the bottom of the screen */
+footer
+{
+	background: #1CD5DB;	
+	text-align: center;
+	font-size: 24px;
+	padding: 20px;
+}
+
+/* Code to responsively control the page layout for small screens */
+@media(max-width: 600px)
+{
+	#menu
+	{
+		width: 100%; /* Have the menu <div> stretch the entire width of the page instead of only occupying the left side */
+		position: initial; /* Reset the menu's position to the CSS default */
+	}
+
+	#content
+	{
+		margin-left: 0; /* Remove the existing margin set for the content <div> to have it stretch the width of the page */
+	}
 }
